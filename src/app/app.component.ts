@@ -4,12 +4,8 @@ import { POKEMONS } from './mock-pokemon-list';
 import { Pokemon } from './pokemon';
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
-  template: `
-    <h1>Liste de pokemon !</h1>
-
-    <router-outlet />
-  `,
+  // imports: [RouterOutlet],
+  templateUrl:'./app.component.html',
   styles: [],
 })
 export class AppComponent implements OnInit {
@@ -17,9 +13,10 @@ export class AppComponent implements OnInit {
  
   ngOnInit(): void {
       console.table(POKEMONS)
-      this.selectPokemon(POKEMONS[1])
+      // this.selectPokemon(POKEMONS[1])
   }
-  selectPokemon(pokemonName:Pokemon){
-    console.log(`Vous avez clique sur le pokemon ${pokemonName.name}`)
+  selectPokemon(pokemonID:string){
+    const pokemonselected :Pokemon|undefined= POKEMONS.find(pokemon => pokemon.id==+pokemonID);
+    console.log(`Vous avez clique sur le pokemon ${pokemonselected?.name}`)
   }
 }
