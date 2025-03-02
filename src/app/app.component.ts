@@ -3,12 +3,14 @@ import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { POKEMONS } from './mock-pokemon-list';
 import { Pokemon } from './pokemon';
+import { BorderCardDirective } from './border-card.directive';
+BorderCardDirective
 @Component({
   selector: 'app-root',
   // imports: [RouterOutlet],
   templateUrl:'./app.component.html',
   styles: [],
-  imports: [CommonModule]
+  imports: [CommonModule,BorderCardDirective]
 })
 export class AppComponent implements OnInit {
   title = 'ng-pokemon-app';
