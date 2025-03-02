@@ -1,4 +1,5 @@
 import { Component,OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { POKEMONS } from './mock-pokemon-list';
 import { Pokemon } from './pokemon';
@@ -7,10 +8,11 @@ import { Pokemon } from './pokemon';
   // imports: [RouterOutlet],
   templateUrl:'./app.component.html',
   styles: [],
+  imports: [CommonModule]
 })
 export class AppComponent implements OnInit {
   title = 'ng-pokemon-app';
- 
+  pokemonList=POKEMONS;
   ngOnInit(): void {
       console.table(POKEMONS)
       // this.selectPokemon(POKEMONS[1])
