@@ -1,29 +1,6 @@
 <h1 class="center">Liste de pokemon !</h1>
-<!-- <input
-    #input 
-    (keyup.enter)="selectPokemon(input.value)"
-    type="number"
-> -->
-<div class="container">
-    <div class="row">
-        <div *ngFor="let pokemon of  pokemonList" class="col m4 s6" appBorderCard="red">
-           <div class="card horizontal">
-                <div class="card-image">
-                    <img [src]="pokemon.picture" />
-                </div>
-                <div class="card-stacked">
-                    <div class="card-content">
-                        <p>{{pokemon.name}}</p>
-                        <p><small>{{pokemon.created | date:"dd/MM/yy"}}</small></p>
-                        <span *ngFor="let type of pokemon.types" class="{{type | pokemonType}}">
-                            {{type}}
-                        </span>
-                    </div>
-               </div>
-           </div>
-           
-        </div>
-    </div>
-
-</div>
+<router-outlet></router-outlet>
+<!-- angulare est un application web non une site web car envois un seul page aux clients app-component.html et gere les autres page a 
+l aide des scripte internet <router-outlet> 
+    il affiche le pages demande par l' utilisateur et masque les autres -->
 
