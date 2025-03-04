@@ -60,3 +60,6 @@ For more information on using the Angular CLI, including detailed command refere
 
 ## generate template with html and file ts
 ng generate component list-pokemon --inline-template=false
+
+## generate service
+ng generate service pokemon/pokemon 
