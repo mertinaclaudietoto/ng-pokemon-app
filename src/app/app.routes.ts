@@ -14,6 +14,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { ListPokemonComponent } from './pokemon/list-pokemon/list-pokemon.component';
 import { DetailPokemonComponent } from './pokemon/detail-pokemon/detail-pokemon.component';
 import { EditPokemonComponent } from './pokemon/edit-pokemon/edit-pokemon.component';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryDataService } from './in-memory-data.service';
 export const routes: Routes = [
   {path:'edit/pokemon/:id',component:EditPokemonComponent},
   {path:'',redirectTo:'pokemons',pathMatch:'full'},
@@ -23,15 +25,15 @@ export const routes: Routes = [
 
 ];
 
-// @NgModule({
-//   // declaration seulement pour les imports specifique aux module
-//   declarations: [
-//   ],
-//   imports: [
-//     BrowserModule,
-//     AppRoutingModule,
-//     PokemonModule,
-//     RouterModule.forRoot(routes)
-//   ]
-// })
-// export class AppModule { }
+@NgModule({
+  // declaration seulement pour les imports specifique aux module
+  declarations: [
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService,{dataEncapsulation:false})
+    // RouterModule.forRoot(routes)
+  ]
+})
+export class AppModule { }

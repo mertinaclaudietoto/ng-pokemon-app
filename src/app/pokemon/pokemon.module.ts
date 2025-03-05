@@ -7,6 +7,7 @@ import { DetailPokemonComponent } from './detail-pokemon/detail-pokemon.componen
 
 import { Routes,RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 // const pokemonroutes: Routes = [
 //   {path:'pokemons',component:ListPokemonComponent},
@@ -23,7 +24,8 @@ import { FormsModule } from '@angular/forms';
     ListPokemonComponent,
     PokemonColorPipe,
     DetailPokemonComponent,
-    FormsModule
+    FormsModule,
+    HttpClientModule
     // NgForm
     // RouterModule.forChild(pokemonroutes)
   ]
